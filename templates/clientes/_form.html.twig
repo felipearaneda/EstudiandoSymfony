@@ -1,0 +1,9 @@
+{# templates/clientes/_form.html.twig #}
+{{ form_start(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    {{ form_row(form.nombre_archivo) }}
+    {% if cliente.nombreArchivo %}
+       <a href="{{ asset('uploads/brochures/' ~ cliente.nombreArchivo) }}">Ver archivo (PDF)</a>
+    {% endif %}
+{{ form_end(form) }}
